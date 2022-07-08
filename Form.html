@@ -8,7 +8,7 @@
         <script src="https://cdn.tailwindcss.com"></script>
     </head>
     <body>
-        <!-- <div class=" bg-gray-50 sm:bg-gray-200 w-1/2 p-4 m-4"> -->
+         <div class="float-left"> 
             <form class="font-serif sm:bg-gray-200 p-4 m-4 w-96">
                 <h1 class="sm:text-2xl font-bold font-serif text-red-500 text-center">Employee Registration Form</h1><br>
                 <table class="sm:mx-5">
@@ -70,10 +70,10 @@
                     <tr class="items-start">
                         <td>Language Known</td>
                         <td >
-                                <input type="checkbox">Gujarati<br>
-                                <input type="checkbox">Hindi<br>
-                                <input type="checkbox">Marathi<br>
-                                <input type="checkbox">English<br>
+                                <input type="checkbox" >Gujarati<br>
+                                <input type="checkbox" checked>Hindi<br>
+                                <input type="checkbox" checked>Marathi<br>
+                                <input type="checkbox" checked>English<br>
                         </td>
                     </tr>
                     <tr class="items-start">
@@ -85,12 +85,29 @@
                     <tr>
                         <td></td>
                         <td>
-                            <button type="submit" class="text-white border-solid border-2 border-slate-500 rounded-lg px-2 bg-blue-500">Submit</button>
+                            <button type="submit" onclick="sub_data()" class="text-white border-solid border-2 border-slate-500 rounded-lg px-2 bg-blue-500">Submit</button>
                             <button type="reset" class="text-white bg-blue-500 border-solid border-2 border-gray-500 rounded-lg px-2">Reset</button>
                         </td>
                     </tr>
                 </table>
             </form>
         </div>
+        <div class="float-left m-5 border-slate-500 bg-sky-200">
+            <table class="border-2 border-black">
+                <tr class="border-black">
+                    <th class="border-r border-black p-2">Sr No.</th>
+                    <th class="border-r border-black p-2">First Name</th>
+                    <th class="border-r border-black p-2">Last Name</th>
+                    <th class="border-r border-black p-2">State</th>
+                    <th class="border border-black p-2">Email-Id</th>
+                    <th class="border border-black p-2">Mobile No.</th>
+                </tr>
+                
+            </table>
+        </div>
+
+        <script>
+
+        </script>
     </body>
 </html>
