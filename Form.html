@@ -22,28 +22,28 @@
                     </tr>
                     <tr>
                         <td>First Name</td>
-                        <td class="rounded-lg"><input type="text"><br></td>
+                        <td class="rounded-lg"><input type="text" id="fnid" placeholder="First Name"><br></td>
                     </tr>
                     <tr>
                         <td>Last name</td>
-                        <td><input type="text"></td>
+                        <td><input type="text" id="lnid" placeholder="Last Name"></td>
                     </tr>
                     <tr>
                         <td>Address 1</td>
-                        <td><input type="text"></td>
+                        <td><input type="text" id="adid1"></td>
                     </tr>
                     <tr>
                         <td>Address 2</td>
-                        <td><input type="text"></td>
+                        <td><input type="text" id="adid2"></td>
                     </tr>
                     <tr>
                         <td>City</td>
-                        <td><input type="text"></td>
+                        <td><input type="text" id="cityid"></td>
                     </tr>
                     <tr>
                         <td>State</td>
                         <td>
-                            <select>
+                            <select id="stateid">
                                 <option>Gujarat</option>
                                 <option>Maharashtra</option>
                                 <option>Kerala</option>
@@ -53,7 +53,7 @@
                     </tr>
                     <tr>
                         <td>Zip</td>
-                        <td><input type="number"></td>
+                        <td><input type="number" id="zipid"></td>
                     </tr>
                     <tr>
                         <td>Upload Photo</td>
@@ -61,11 +61,11 @@
                     </tr>
                     <tr>
                         <td>E-Mail</td>
-                        <td><input type="email"></td>
+                        <td><input type="email" id="mailid"></td>
                     </tr>
                     <tr>
                         <td>Mobile No.</td>
-                        <td><input type="tel" placeholder="+91"></td>
+                        <td><input type="tel" placeholder="+91" id="mnoid"></td>
                     </tr>
                     <tr class="items-start">
                         <td>Language Known</td>
@@ -85,29 +85,83 @@
                     <tr>
                         <td></td>
                         <td>
-                            <button type="submit" onclick="sub_data()" class="text-white border-solid border-2 border-slate-500 rounded-lg px-2 bg-blue-500">Submit</button>
+                            <!-- <input type="submit" onclick="sub_data()">button -->
+                            <button type="button" onclick="sub_data()" class="text-white border-solid border-2 border-slate-500 rounded-lg px-2 bg-blue-500">Submit</button>
                             <button type="reset" class="text-white bg-blue-500 border-solid border-2 border-gray-500 rounded-lg px-2">Reset</button>
                         </td>
                     </tr>
                 </table>
             </form>
         </div>
-        <div class="float-left m-5 border-slate-500 bg-sky-200">
-            <table class="border-2 border-black">
-                <tr class="border-black">
-                    <th class="border-r border-black p-2">Sr No.</th>
-                    <th class="border-r border-black p-2">First Name</th>
-                    <th class="border-r border-black p-2">Last Name</th>
-                    <th class="border-r border-black p-2">State</th>
+        <div class="float-left m-4 bg-slate-200 p-5 ">
+            <h1 class="sm:text-2xl font-bold font-serif text-red-500 text-center">Registered Employee List</h1><br>
+            <table class="border border-2 border-black font-serif" id="tableid">
+                <tr class=" border-slate-500 bg-slate-400">
+                    <th class="border border-black p-2">Sr No.</th>
+                    <th class="border border-black p-2">First Name</th>
+                    <th class="border border-black p-2">Last Name</th>
+                    <!-- <th class="border border-black p-2">Address</th> -->
+                    <th class="border border-black p-2">City</th>
+                    <th class="border border-black p-2">State</th>
                     <th class="border border-black p-2">Email-Id</th>
                     <th class="border border-black p-2">Mobile No.</th>
+                    <!-- <th class="border border-black p-2">Photo</th> -->
                 </tr>
-                
+                <tr class="text-center">
+                    <td class="border border-black">1.</td>
+                    <td class="border border-black">Priyanka</td>
+                    <td class="border border-black">Gade</td>
+                    <td class="border border-black">Pune</td>
+                    <td class="border border-black p-2">Maharashtra</td>
+                    <td class="border border-black p-2 underline text-sky-500">priya.gade@gmail.com</td>
+                    <td class="border border-black">7020324232</td>
+                    <!-- <td class="border border-black"></td> -->
+                </tr>
             </table>
         </div>
 
         <script>
+            function sub_data(){
+                var table = document.getElementById("tableid");
+                var row = document.createElement("tr");
+                 
+                // var colatt = document.createAttribute("class");
+              
+              
+                var col1 = document.createElement("td");
+                var col2 = document.createElement("td");
+                var col3 = document.createElement("td");
+                var col4 = document.createElement("td");
+                var col5 = document.createElement("td");
+                var col6 = document.createElement("td");
+                var col7 = document.createElement("td");
 
+                table.append(row);
+                row.append(col1);
+                row.append(col2);
+                row.append(col3);
+                row.append(col4);
+                row.append(col5);
+                row.append(col6);
+                row.append(col7);
+                
+                var fn = document.getElementById("fnid").value;
+                var ln = document.getElementById("lnid").value;
+                var city =document.getElementById("cityid").value;
+                var state = document.getElementById("stateid").value;
+                var email = document.getElementById("mailid").value;
+                var mob =document.getElementById("mnoid").value;
+
+                col2.append(fn);
+                col3.append(ln);
+                col4.append(city);
+                col5.append(state);
+                col6.append(email);
+                col7.append(mob);
+
+                row.setAttribute("class","border border-black text-center" );
+               
+            }
         </script>
     </body>
 </html>
