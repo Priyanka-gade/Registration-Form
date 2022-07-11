@@ -6,6 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Registration Form</title>
         <script src="https://cdn.tailwindcss.com"></script>
+        <script src="https://kit.fontawesome.com/a076d05399.js"></script>
     </head>
     <body>
         <div class="float-left">
@@ -87,8 +88,8 @@
                         <td></td>
                         <td>
                             <!-- <input type="submit" onclick="sub_data()">button -->
-                            <button type="button" onclick="sub_data()" class="text-white border-solid border-2 border-slate-500 rounded-lg px-2 bg-blue-500">Submit</button>
-                            <button type="reset" class="text-white bg-blue-500 border-solid border-2 border-gray-500 rounded-lg px-2">Reset</button>
+                            <button type="button" onclick="sub_data()" class="text-white border-solid border-2 rounded-lg px-2 bg-blue-700">Submit</button>
+                            <button type="reset" class="text-white bg-blue-700 border-solid border-2 rounded-lg px-2">Reset</button>
                         </td>
                     </tr>
                 </table>
@@ -98,7 +99,7 @@
             <h1 class="sm:text-2xl font-bold font-serif text-red-500 text-center">Registered Employee List</h1><br>
             <table class="border border-2 border-black font-serif" id="tableid">
                 <tr class=" border-slate-500 bg-slate-400">
-                    <th class="border border-black p-2">Sr No.</th>
+                    <!-- <th class="border border-black p-2">Sr No.</th> -->
                     <th class="border border-black p-2">First Name</th>
                     <th class="border border-black p-2">Last Name</th>
                     <!-- <th class="border border-black p-2">Address</th> -->
@@ -107,9 +108,11 @@
                     <th class="border border-black p-2">Email-Id</th>
                     <th class="border border-black p-2">Mobile No.</th>
                     <!-- <th class="border border-black p-2">Photo</th> -->
+                    <th></th>
+                    <th></th>
                 </tr>
                 <tr class="text-center">
-                    <td class="border border-black">1</td>
+                    <!-- <td class="border border-black">1</td> -->
                     <td class="border border-black">Priyanka</td>
                     <td class="border border-black">Gade</td>
                     <td class="border border-black">Pune</td>
@@ -117,8 +120,12 @@
                     <td class="border border-black p-2 underline text-sky-500">priya.gade@gmail.com</td>
                     <td class="border border-black">7020324232</td>
                     <!-- <td class="border border-black"></td> -->
+                    <td><i class='fas fa-edit'></i></td>
+                    <td><i class="fa fa-trash" aria-hidden="true"></i></td>
                 </tr>
-            </table>
+            </table><br>
+            <button type="button" class="float-right text-white bg-blue-700 border-solid border-2 rounded-lg px-2">Update</button>
+            <button type="button" class="float-right text-white bg-blue-700 border-solid border-2 rounded-lg px-2">Delete</button>
         </div>
 
         <script>
@@ -136,6 +143,7 @@
                 var col5 = document.createElement("td");
                 var col6 = document.createElement("td");
                 var col7 = document.createElement("td");
+                
 
                 col1.setAttribute("id", "srid");
 
@@ -155,7 +163,7 @@
                 var email = document.getElementById("mailid").value;
                 var mob = document.getElementById("mnoid").value;
 
-                col1.append(srno);
+                // col1.append(srno);
                 col2.append(fn);
                 col3.append(ln);
                 col4.append(city);
@@ -163,14 +171,14 @@
                 col6.append(email);
                 col7.append(mob);
 
-                col1.setAttribute("class", "border border-black text-center");
-                col2.setAttribute("class", "border border-black text-center");
-                col3.setAttribute("class", "border border-black text-center");
-                col4.setAttribute("class", "border border-black text-center");
-                col5.setAttribute("class", "border border-black text-center");
-                col6.setAttribute("class", "border border-black text-center");
-                col7.setAttribute("class", "border border-black text-center");
-
+                
+                col1.setAttribute("class", "border border-black text-center p-1");
+                col2.setAttribute("class", "border border-black text-center p-1");
+                col3.setAttribute("class", "border border-black text-center p-1");
+                col4.setAttribute("class", "border border-black text-center p-1");
+                col5.setAttribute("class", "border border-black text-center p-1");
+                col6.setAttribute("class", "border border-black text-center underline text-sky-500 p-1");
+                col7.setAttribute("class", "border border-black text-center p-1");
 
             }
         
