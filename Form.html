@@ -44,6 +44,7 @@
                         <td>State</td>
                         <td>
                             <select id="stateid">
+                                <option></option>
                                 <option>Gujarat</option>
                                 <option>Maharashtra</option>
                                 <option>Kerala</option>
@@ -108,7 +109,7 @@
                     <!-- <th class="border border-black p-2">Photo</th> -->
                 </tr>
                 <tr class="text-center">
-                    <td class="border border-black">1.</td>
+                    <td class="border border-black">1</td>
                     <td class="border border-black">Priyanka</td>
                     <td class="border border-black">Gade</td>
                     <td class="border border-black">Pune</td>
@@ -123,10 +124,10 @@
         <script>
             function sub_data(){
                 var table = document.getElementById("tableid");
+                
                 var row = document.createElement("tr");
                  
-                // var colatt = document.createAttribute("class");
-              
+                table.append(row);
               
                 var col1 = document.createElement("td");
                 var col2 = document.createElement("td");
@@ -136,7 +137,8 @@
                 var col6 = document.createElement("td");
                 var col7 = document.createElement("td");
 
-                table.append(row);
+                col1.setAttribute("id","srid" );
+
                 row.append(col1);
                 row.append(col2);
                 row.append(col3);
@@ -144,7 +146,21 @@
                 row.append(col5);
                 row.append(col6);
                 row.append(col7);
+
+                var  count =1;
+                 var srno = function increase(){
+                    for(count =1;count<=10; count++){
+                        
+                    }
+                        // var srno = document.getElementById("srid").value;
+                        // srno = count+1;
+                        // count++;
+                        // console.log(srno);
+                }
+                // increase();
                 
+                
+                // var srno =document.getElementById("tdid").innerText;
                 var fn = document.getElementById("fnid").value;
                 var ln = document.getElementById("lnid").value;
                 var city =document.getElementById("cityid").value;
@@ -152,6 +168,7 @@
                 var email = document.getElementById("mailid").value;
                 var mob =document.getElementById("mnoid").value;
 
+                col1.append(srno);
                 col2.append(fn);
                 col3.append(ln);
                 col4.append(city);
@@ -159,8 +176,15 @@
                 col6.append(email);
                 col7.append(mob);
 
-                row.setAttribute("class","border border-black text-center" );
-               
+                col1.setAttribute("class","border border-black text-center" );
+                col2.setAttribute("class","border border-black text-center" );
+                col3.setAttribute("class","border border-black text-center" );
+                col4.setAttribute("class","border border-black text-center" );
+                col5.setAttribute("class","border border-black text-center" );
+                col6.setAttribute("class","border border-black text-center" );
+                col7.setAttribute("class","border border-black text-center" );
+        
+                
             }
         </script>
     </body>
